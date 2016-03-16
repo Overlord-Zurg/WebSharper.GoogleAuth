@@ -50,6 +50,7 @@
     <Compile Include="Global.asax.fs" />
     <Content Include="Setup.fsx" />
     <Content Include="packages.config" />
+    <Content Include="StoledFromGoogle.txt" />
   </ItemGroup>
   <Target Name="IncludeContent" BeforeTargets="Compile">
     <ItemGroup>

@@ -1,13 +1,14 @@
 (function()
 {
- var Global=this,Runtime=this.IntelliFactory.Runtime,UI,Next,Var,Submitter,Remoting,AjaxRemotingProvider,Concurrency,View,List,Doc,T,AttrProxy;
+ var Global=this,Runtime=this.IntelliFactory.Runtime,jQuery,UI,Next,Var,Submitter,Remoting,AjaxRemotingProvider,Concurrency,View,List,Doc,T,AttrProxy;
  Runtime.Define(Global,{
   WebSharper:{
    GoogleAuth:{
     Client:{
      Main:function()
      {
-      var rvInput,submit,arg00,arg10,vReversed,arg20,arg201,arg202,arg203;
+      var domNode,rvInput,submit,arg00,arg10,vReversed,arg20,arg201,arg202,arg203;
+      domNode=jQuery("<h1>Hello worlf!</h1>").get(0);
       rvInput=Var.Create("");
       submit=Submitter.CreateOption(rvInput.get_View());
       arg00=function(_arg1)
@@ -31,7 +32,7 @@
        $:0
       }),rvInput),Doc.Button("Send",Runtime.New(T,{
        $:0
-      }),arg201),Doc.Element("hr",[],arg202),Doc.Element("h4",List.ofArray([AttrProxy.Create("class","text-muted")]),List.ofArray([Doc.TextNode("The server responded:")])),Doc.Element("div",List.ofArray([AttrProxy.Create("class","jumbotron")]),List.ofArray([Doc.Element("h1",[],arg203)]))]);
+      }),arg201),Doc.Element("hr",[],arg202),Doc.Element("h4",List.ofArray([AttrProxy.Create("class","text-muted")]),List.ofArray([Doc.TextNode("The server responded:")])),Doc.Element("div",List.ofArray([AttrProxy.Create("class","jumbotron")]),List.ofArray([Doc.Element("h1",[],arg203)])),Doc.Static(domNode)]);
       return Doc.Element("div",[],arg20);
      }
     }
@@ -40,6 +41,7 @@
  });
  Runtime.OnInit(function()
  {
+  jQuery=Runtime.Safe(Global.jQuery);
   UI=Runtime.Safe(Global.WebSharper.UI);
   Next=Runtime.Safe(UI.Next);
   Var=Runtime.Safe(Next.Var);
